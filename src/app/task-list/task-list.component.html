@@ -1,0 +1,21 @@
+
+<ion-card *ngIf="tasks.length > 0">
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let task of tasks">
+        <ion-label>
+          <h1>{{ task.title }}</h1>
+          <p>Description: {{ task.description }}</p>
+        </ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="task.done" (ionChange)="onUpdateTask(task)">Done</ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card *ngIf="tasks.length === 0">
+  <ion-card-header>
+    <ion-card-title>No Tasks Available</ion-card-title>
+  </ion-card-header>
+</ion-card>
+
