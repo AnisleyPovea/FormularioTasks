@@ -17,15 +17,19 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating">Title</ion-label>
-        <ion-input maxlength="3" type="text" formControlName="title" clearInput required></ion-input>
-        
+        <ion-input type="text" formControlName="title" clearInput required></ion-input>
       </ion-item>
+        <small *ngIf="title" style="color: red;">
+          {{ getTitleErrorMessage() }}
+        </small>
 
       <ion-item>
         <ion-label position="floating">Description</ion-label>
-        <ion-input maxlength="10" type="text" formControlName="description" clearInput required></ion-input>
+        <ion-input type="text" formControlName="description" clearInput required></ion-input>
       </ion-item>
-      
+        <small *ngIf="description" style="color: red;">
+          {{ getDescriptionErrorMessage() }}
+        </small> 
   </ion-list>
   <ion-item>
   <ion-button type="submit" color="success" [disabled]="!form.valid">Enviar</ion-button>
