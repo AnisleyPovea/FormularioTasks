@@ -8,6 +8,12 @@
   transform: translateY(-50%);
 }
 
+ion-toolbar {
+  --background: #3f1e47;
+  --color: #FFF; 
+}
+
+
 #container strong {
   font-size: 20px;
   line-height: 26px;
